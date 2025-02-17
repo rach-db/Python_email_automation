@@ -1,31 +1,45 @@
-
-⚠️ Disclaimer: This project is for educational and ethical use only. Do not use it for unauthorized tracking.
+## ⚠️ Disclaimer
+This project is for **educational and ethical cybersecurity research only**. Unauthorized email tracking or misuse of this script is strictly prohibited.
 
 # 📧 Email Sender Script
 
-This is a Python script for sending bulk emails using the **Mailjet API** and an Excel email list.  
+# Email Tracking Script with Canary Tokens
 
-## 🚀 Features:
-- Sends emails in bulk using an Excel file (`mails.xlsx`).
-- Supports **HTML email content**.
-- Uses **Mailjet API** for sending emails securely.
-- Customizable email subject and body.
+## 📌 Overview
+This Python script automates email sending using **Mailjet API** and **Canary Tokens** to track when recipients interact with the email. It is designed for **cybersecurity awareness, phishing simulation, and security research**.
 
-## 🛠️ Requirements:
-- Python 3.x
-- `requests` and `pandas` libraries
-- A verified **Mailjet** account with API keys
+## 🚀 Features
+- Sends emails using **Mailjet API** from a verified sender.
+- Uses **Canary Tokens** to track when a recipient clicks on the embedded link.
+- Reads recipient emails from an **Excel (.xlsx) file**.
+- Supports both **HTML and plain text email formats**.
 
-## 🔧 Setup Instructions:
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/rach-db/repository-name.git
-   cd repository-name
-2. Install required libraries:
-    pip install requests pandas openpyxl
-3. Update MAILJET_API_KEY and MAILJET_SECRET_KEY in send_mails.py.
-4. Run the script:
-   python send_mails.py
+## 🛠 Setup & Installation
+### 1️⃣ Install Dependencies
+Ensure you have Python installed, then install the required libraries:
+```sh
+pip install requests pandas
+```
+
+### 2️⃣ Configure the Script
+- Update the **Mailjet API Key** and **Secret Key** in the script.
+- Modify the **Sender Email** to a verified email in Mailjet.
+- Replace the **Canary Token Link** with your generated Canary Token.
+- Ensure your **mails.xlsx** file contains a column named `Email` with recipient addresses.
+
+### 3️⃣ Run the Script
+Execute the script using:
+```sh
+python send_mails.py
+```
+
+## 📊 Usage
+1. The script reads recipient emails from `mails.xlsx`.
+2. Sends an email with the tracking link (Canary Token).
+3. When a recipient clicks the link, **Canary Tokens will log the interaction**.
+
+
+
 
 📌 Notes:
 The emails are sent from your Mailjet account. Ensure your sender email is verified.
