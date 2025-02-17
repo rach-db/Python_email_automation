@@ -1,9 +1,7 @@
 ## ⚠️ Disclaimer
 This project is for **educational and ethical cybersecurity research only**. Unauthorized email tracking or misuse of this script is strictly prohibited.
 
-# 📧 Email Sender Script
-
-# Email Tracking Script with Canary Tokens
+# 📧 Email Tracking Script with Canary Tokens
 
 ## 📌 Overview
 This Python script automates email sending using **Mailjet API** and **Canary Tokens** to track when recipients interact with the email. It is designed for **cybersecurity awareness, phishing simulation, and security research**.
