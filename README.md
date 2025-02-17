@@ -1,3 +1,6 @@
+
+⚠️ Disclaimer: This project is for educational and ethical use only. Do not use it for unauthorized tracking.
+
 # 📧 Email Sender Script
 
 This is a Python script for sending bulk emails using the **Mailjet API** and an Excel email list.  
