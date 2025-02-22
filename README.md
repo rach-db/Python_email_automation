@@ -7,8 +7,6 @@ Ensure you have consent before sending tracking emails.
 
 Do not impersonate organizations or individuals.
 
-Comply with Mailjet’s policies and applicable privacy laws.
-
 This tool should be used for internal security training, research, or authorized testing only.
 
 Bulk Email Sending Script with Canary Tokens
@@ -39,13 +37,13 @@ openpyxl library (pip install openpyxl)
 
   1.Clone the repository:
 
-  git clone https://github.com/yourusername/your-repo-name.git
+  **git clone https://github.com/yourusername/your-repo-name.git**
   
-  cd your-repo-name
+  **cd your-repo-name**
 
   2.Install dependencies:
 
-  pip install pandas openpyxl
+  **pip install pandas openpyxl**
 
   3.Prepare your mails.xlsx file:
   
