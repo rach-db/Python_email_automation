@@ -40,6 +40,7 @@ openpyxl library (pip install openpyxl)
   1.Clone the repository:
 
   git clone https://github.com/yourusername/your-repo-name.git
+  
   cd your-repo-name
 
   2.Install dependencies:
@@ -47,6 +48,7 @@ openpyxl library (pip install openpyxl)
   pip install pandas openpyxl
 
   3.Prepare your mails.xlsx file:
+  
   Ensure your Excel sheet contains columns named Email and Name.
 
   4.Configure Gmail App Password:
@@ -56,9 +58,10 @@ openpyxl library (pip install openpyxl)
   Generate an App Password and use it in the script.
 
   5.Edit the script:
+  
   Replace the following placeholders in the script:
 
-  sender_email: Your Gmail address
+  sender_email: Your Gmail address.
 
   app_password: Your Gmail App Password
 
@@ -70,11 +73,6 @@ Execute the script using:
 
 python send_mails.py
 
-Notes
-
-Emails might land in the spam folder — adjust the content and subject line for better deliverability.
-
-Ensure the Canary Token link is correctly generated and active.
 
 ## 📊 Usage
 1. The script reads recipient emails from `mails.xlsx`.
@@ -84,3 +82,5 @@ Ensure the Canary Token link is correctly generated and active.
 
 📌 Notes:
 Use responsibly for authorized bulk email sending.
+Emails might land in the spam folder — adjust the content and subject line for better deliverability.
+Ensure the Canary Token link is correctly generated and active.
