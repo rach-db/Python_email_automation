@@ -11,33 +11,70 @@ Comply with Mailjet’s policies and applicable privacy laws.
 
 This tool should be used for internal security training, research, or authorized testing only.
 
-## 📌 Overview
-This Python script automates email sending using **Mailjet API** and **Canary Tokens** to track when recipients interact with the email. It is designed for **cybersecurity awareness, phishing simulation, and security research**.
+Bulk Email Sending Script with Canary Tokens
 
-## 🚀 Features
-- Sends emails using **Mailjet API** from a verified sender.
-- Uses **Canary Tokens** to track when a recipient clicks on the embedded link.
-- Reads recipient emails from an **Excel (.xlsx) file**.
-- Supports both **HTML and plain text email formats**.
+## Overview
 
-## 🛠 Setup & Installation
-### 1️⃣ Install Dependencies
-Ensure you have Python installed, then install the required libraries:
-```sh
-pip install requests pandas
-```
+This project contains a Python script designed to send bulk emails using Gmail's SMTP server. The emails contain a security update link generated via Canary Tokens for tracking purposes. The recipient list is managed through an Excel file.
 
-### 2️⃣ Configure the Script
-- Update the **Mailjet API Key** and **Secret Key** in the script.
-- Modify the **Sender Email** to a verified email in Mailjet.
-- Replace the **Canary Token Link** with your generated Canary Token.
-- Ensure your **mails.xlsx** file contains a column named `Email` with recipient addresses.
+## Features
 
-### 3️⃣ Run the Script
+Sends personalized emails to multiple recipients.
+
+Uses Canary Token links for security tracking.
+
+Reads email addresses and names from an Excel (.xlsx) file.
+
+Uses Gmail's secure SMTP server for sending emails.
+
+## Prerequisites
+
+Python 3.x installed
+
+Pandas library (pip install pandas)
+
+openpyxl library (pip install openpyxl)
+
+## Setup Instructions
+
+  1.Clone the repository:
+
+  git clone https://github.com/yourusername/your-repo-name.git
+  cd your-repo-name
+
+  2.Install dependencies:
+
+  pip install pandas openpyxl
+
+  3.Prepare your mails.xlsx file:
+  Ensure your Excel sheet contains columns named Email and Name.
+
+  4.Configure Gmail App Password:
+
+  Enable 2-Step Verification on your Gmail account.
+
+  Generate an App Password and use it in the script.
+
+  5.Edit the script:
+  Replace the following placeholders in the script:
+
+  sender_email: Your Gmail address
+
+  app_password: Your Gmail App Password
+
+  canary_link: Your unique Canary Token link
+
+## Running the Script
+
 Execute the script using:
-```sh
+
 python send_mails.py
-```
+
+Notes
+
+Emails might land in the spam folder — adjust the content and subject line for better deliverability.
+
+Ensure the Canary Token link is correctly generated and active.
 
 ## 📊 Usage
 1. The script reads recipient emails from `mails.xlsx`.
@@ -45,8 +82,5 @@ python send_mails.py
 3. When a recipient clicks the link, **Canary Tokens will log the interaction**.
 
 
-
-
 📌 Notes:
-The emails are sent from your Mailjet account. Ensure your sender email is verified.
 Use responsibly for authorized bulk email sending.
