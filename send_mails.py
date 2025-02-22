@@ -1,55 +1,37 @@
-import requests
+import smtplib
 import pandas as pd
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-# Mailjet API Credentials
-MAILJET_API_KEY = "your-mailjet-api-key"
-MAILJET_SECRET_KEY = "your-mailjet-secret-key"
+# Load email list from Excel
+df = pd.read_excel("emails.xlsx")  # Ensure this file exists
 
-# Your sender email (must be verified in Mailjet)
-SENDER_EMAIL = "your-email"
+# Your Gmail credentials
+sender_email = "your_email@gmail.com"
+app_password = "your_generated_app_password"  # Use App Password, not your real password
 
-# Your Canary Token tracking link
-CANARY_TOKEN_LINK = "https://your-canary-token-link.com"
-# Load email list from an Excel file
-email_list = pd.read_excel("mails.xlsx")  # Ensure this file has a column 'Email'
+canary_link = "https://your-canary-token-link"
 
-# Mailjet API Endpoint
-MAILJET_URL = "https://api.mailjet.com/v3.1/send"
+server = smtplib.SMTP("smtp.gmail.com", 587)
+server.starttls()
+server.login(sender_email, app_password)
 
-for index, row in email_list.iterrows():
-    recipient_email = row['Email']
+# Loop through recipients
+for index, row in df.iterrows():
+    receiver_email = row["Email"]
+    name = row["Name"]
 
-    data = {
-        "Messages": [
-            {
-                "From": {"Email": SENDER_EMAIL, "Name": "IT Support Team"},
-                "To": [{"Email": recipient_email}],
-                "Subject": "Action Required: Verify Your Access",
-                "TextPart": (
-                    "Hello,\n\n"
-                    "We need a quick confirmation from you regarding your recent login activity. "
-                    "Please check the following link and confirm your details:\n\n"
-                    f"{CANARY_TOKEN_LINK}\n\n"
-                    "Let us know if you have any concerns.\n\n"
-                    "Best,\n"
-                    "IT Support Team"
-                ),
-                "HTMLPart": (
-                    "<p>Hello,</p>"
-                    "<p>We need a quick confirmation regarding your recent login activity.</p>"
-                    f"<p>Please <a href='{CANARY_TOKEN_LINK}'>click here</a> to confirm your details.</p>"
-                    "<p>Let us know if you have any concerns.</p>"
-                    "<p>Best,<br>IT Support Team</p>"
-                )
-            }
-        ]
-    }
+    # Email content
+    msg = MIMEMultipart()
+    msg["From"] = sender_email
+    msg["To"] = receiver_email
+    msg["Subject"] = "Important Security Update"
+    
+    body = f"Hello {name},\n\nPlease check this important security update: {canary_link}\n\nBest,\nCybersecurity Team"
+    msg.attach(MIMEText(body, "plain"))
 
-    response = requests.post(
-        MAILJET_URL, json=data, auth=(MAILJET_API_KEY, MAILJET_SECRET_KEY)
-    )
+    # Send email
+    server.sendmail(sender_email, receiver_email, msg.as_string())
 
-    if response.status_code == 200:
-        print(f"Email sent to {recipient_email}")
-    else:
-        print(f"Failed to send to {recipient_email}: {response.text}")
+server.quit()
+print("Emails sent successfully!")
