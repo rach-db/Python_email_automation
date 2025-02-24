@@ -1,5 +1,5 @@
 ## ⚠️ Disclaimer
-This project is for **educational and ethical cybersecurity research only**. Do not use it for unauthorized tracking, phishing, or malicious activities. Unauthorized use of email tracking can violate privacy laws and terms of service.
+This project is for **educational and ethical cybersecurity research only**. Do not use it for unauthorized tracking, phishing, or malicious activities. **The author is not responsible for any misuse of this script.** Using this tool on unauthorized systems or individuals without consent may violate laws and ethical guidelines.  
 
 📜 Legal & Ethical Guidelines
 
