@@ -9,7 +9,13 @@ Do not impersonate organizations or individuals.
 
 This tool should be used for internal security training, research, or authorized testing only.
 
-Bulk Email Sending Script with Canary Tokens
+Bulk Email Sending Script with Canary Tokenn
+
+Get permission from the recipients if possible (or inform them it’s part of a lab experiment).
+
+Avoid using misleading or suspicious subject lines or links.
+
+Clearly state in your email that it’s for educational purposes.
 
 ## Overview
 
